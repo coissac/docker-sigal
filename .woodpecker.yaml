@@ -1,0 +1,6 @@
+docker-build:
+  image: woodpeckerci/plugin-docker-buildx
+  settings:
+    repo: gargoton.coissac.eu/image/sigal-doker
+    registry: gargoton.coissac.eu
+    dry-run: true
