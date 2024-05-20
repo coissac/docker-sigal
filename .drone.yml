@@ -1,0 +1,33 @@
+---
+kind: pipeline
+ype: docker
+name: build-multiarch-images
+
+platform:
+  os: linux
+  arch: amd64
+
+steps:
+- name: docker
+  image: thegeeklab/drone-docker-buildx
+  privileged: true
+  settings:
+    registry: gargoton.coissac.eu
+    username: 
+      from_secret: GARGOTON_LOGIN
+    password:
+      from_secret: GARGOTON_PASSWORD
+    repo: gargoton.coissac.eu/image/docker-sigal
+    tags: 
+      - latest
+    platforms: 
+      - linux/arm64
+      - linux/amd64
+
+rigger:
+  branch:
+  - main
+  event:
+    exclude:
+    - pull_request
+    
