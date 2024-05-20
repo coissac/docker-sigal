@@ -14,7 +14,7 @@ RUN apt-get update && apt-get install -y \
     nano \
     && rm -rf /var/lib/apt/lists/*
 
-RUN python3 -m pip install 'sigal @ git+https://github.com/saimn/sigal.git'
+RUN python3 -m pip install 'sigal @ git+https://gargoton.coissac.eu/forks/sigal.git'
 
 RUN mkdir -p /themes
 RUN mkdir -p /config
